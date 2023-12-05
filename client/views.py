@@ -3,11 +3,11 @@ from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from .forms import RegisterUserForm, LoginUserForm
+from .forms import UserRegisterForm, LoginUserForm
 
 
 class RegisterUser(CreateView):
-    form_class = RegisterUserForm
+    form_class = UserRegisterForm
     template_name = 'client/register.html'
     success_url = reverse_lazy('home')
 
