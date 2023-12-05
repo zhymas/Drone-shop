@@ -29,3 +29,7 @@ class LoginUser(LoginView):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+def detail_user(request):
+    return render(request, 'client/detail_user.html')

@@ -36,6 +36,16 @@ body::before {
     background-color: white;
     width: 900px;
     position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+}
+
+.users-loging{
+    background-color: white;
+    width: 900px;
+    position: absolute;
     top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
