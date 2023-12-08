@@ -35,7 +35,7 @@
             </li>
             {% if request.user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="#">My orders</a>
+              <a class="nav-link" href="{% url 'orders' %}">My orders</a>
             </li>
             {% endif %}
             <li class="nav-item">

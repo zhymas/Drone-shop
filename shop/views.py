@@ -16,14 +16,20 @@ def product(request):
 
 
 def detail_drone(request, pk):
+    drone = Drone.objects.get(id=pk)
+
     if request.method == "POST":
         form = OrderForm(request.POST)
+
         if form.is_valid():
-            form.save()
+            order = form.save(commit=False)
+            order.client = request.user
+            order.drone = drone
+            order.save()
             return redirect('home')
     else:
         form = OrderForm()
-    drone = Drone.objects.get(id=pk)
+
     context = {
         'drone': drone,
         'form': form

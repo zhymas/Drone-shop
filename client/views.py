@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from .forms import UserRegisterForm, LoginUserForm
-
+from shop.models import Order
 
 class RegisterUser(CreateView):
     form_class = UserRegisterForm
@@ -33,3 +33,11 @@ def logout_user(request):
 
 def detail_user(request):
     return render(request, 'client/detail_user.html')
+
+
+def user_orders(request):
+    orders = Order.objects.filter(client=request.user)
+    context = {
+        'orders': orders
+    }
+    return render(request, 'client/user_orders.html', context)

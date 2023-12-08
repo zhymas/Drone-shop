@@ -40,7 +40,7 @@
 
 <div class="order-drone">
     <h1 class="text-order">Order a drone</h1>
-    <form action="">
+    <form action="" method="post">
         {% csrf_token %}
         {{form.as_p}}
         <button class="btn btn-success button-order" type="submit">Create order</button>

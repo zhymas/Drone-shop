@@ -36,3 +36,14 @@ ul{
     right: 80%;
 }
 
+.user-orders{
+    position: absolute;
+    top: 10%;
+}
+
+.img-order {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
